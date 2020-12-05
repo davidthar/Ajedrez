@@ -21,6 +21,7 @@ import com.davidthar.ajedrez.databinding.ActivityMainBinding
 //TODO COMO MOVER 1 VEZ CADA UNO
 //TODO COMO HACER JAQUE
 //TODO COMO HACER JAQUE MATE
+//TODO QUITAR ERROR CABALLO
 
 
 class MainActivity : AppCompatActivity() {
@@ -44,10 +45,7 @@ class MainActivity : AppCompatActivity() {
                 arrayOf(binding.a1,binding.b1,binding.c1,binding.d1,binding.e1,binding.f1,binding.g1,binding.h1)
         )
 
-        //tablero.colocaPiezas()
-        tablero[2][4].coloca(peonN)
-        tablero[3][4].coloca(peonB)
-        tablero[3][5].coloca(peonB)
+        tablero.colocaPiezas()
 
         fun asigna(tablero : Array<Array<ImageView>>){
             for(i in 0..7){
@@ -87,9 +85,9 @@ class MainActivity : AppCompatActivity() {
                     else if(tablero[i][j].tag == torreB || tablero[i][j].tag == torreN){
                         tablero[i][j].setOnClickListener{
                             tablero.quitaMarcas()
-                            piezaSeleccionada = tablero[i][j] as ImageView
+                            piezaSeleccionada = tablero[i][j]
                             for(m in 1..7){
-                                if((j-m)>=0 && tablero[i][j-m].tag==null) marca(tablero[i][j-m])
+                                if((j-m)>=0 && tablero[i][j-m].vacio()) marca(tablero[i][j-m])
                                 else{
                                     if((j-m)>=0 && tablero[i][j-m].color() != piezaSeleccionada!!.color()){
                                         marca(tablero[i][j-m])
@@ -98,7 +96,7 @@ class MainActivity : AppCompatActivity() {
                                 }
                             }
                             for(m in 1..7){
-                                if((i-m)>=0 && tablero[i-m][j].tag==null) marca(tablero[i-m][j])
+                                if((i-m)>=0 && tablero[i-m][j].vacio()) marca(tablero[i-m][j])
                                 else{
                                     if((i-m)>=0 && tablero[i-m][j].color() != piezaSeleccionada!!.color()){
                                         marca(tablero[i-m][j])
@@ -107,7 +105,7 @@ class MainActivity : AppCompatActivity() {
                                 }
                             }
                             for(m in 1..7){
-                                if((j+m)<=7 && tablero[i][j+m].tag==null) marca(tablero[i][j+m])
+                                if((j+m)<=7 && tablero[i][j+m].vacio()) marca(tablero[i][j+m])
                                 else{
                                     if((j+m)<=7 && tablero[i][j+m].color() != piezaSeleccionada!!.color()){
                                         marca(tablero[i][j+m])
@@ -116,7 +114,7 @@ class MainActivity : AppCompatActivity() {
                                 }
                             }
                             for(m in 1..7){
-                                if((i+m)<=7 && tablero[i+m][j].tag==null) marca(tablero[i+m][j])
+                                if((i+m)<=7 && tablero[i+m][j].vacio()) marca(tablero[i+m][j])
                                 else{
                                     if((i+m)<=7 && tablero[i+m][j].color() != piezaSeleccionada!!.color()){
                                         marca(tablero[i+m][j])
@@ -134,14 +132,14 @@ class MainActivity : AppCompatActivity() {
                         tablero[i][j].setOnClickListener {
                             tablero.quitaMarcas()
                             piezaSeleccionada = tablero[i][j]
-                            if((i-2)>=0 && (j-1)>=0 && tablero[i-2][j-1].tag==null) marca(tablero[i-2][j-1])
-                            if((i-2)>=0 && (j+1)<=7 && tablero[i-2][j+1].tag==null) marca(tablero[i-2][j+1])
-                            if((i-1)>=0 && (j-2)>=0 && tablero[i-1][j-2].tag==null) marca(tablero[i-1][j-2])
-                            if((i-1)>=0 && (j+2)<=7 && tablero[i-1][j+2].tag==null) marca(tablero[i-1][j+2])
-                            if((i+1)<=7 && (j-2)>=0 && tablero[i+1][j-2].tag==null) marca(tablero[i+1][j-2])
-                            if((i+1)<=7 && (j+2)<=7 && tablero[i+1][j+2].tag==null) marca(tablero[i+1][j+2])
-                            if((i+2)<=7 && (j-1)>=0 && tablero[i+2][j-1].tag==null) marca(tablero[i+2][j-1])
-                            if((i+2)<=7 && (j+1)>=0 && tablero[i+2][j+1].tag==null) marca(tablero[i+2][j+1])
+                            if((i-2)>=0 && (j-1)>=0 && tablero[i-2][j-1].vacio()) marca(tablero[i-2][j-1])
+                            if((i-2)>=0 && (j+1)<=7 && tablero[i-2][j+1].vacio()) marca(tablero[i-2][j+1])
+                            if((i-1)>=0 && (j-2)>=0 && tablero[i-1][j-2].vacio()) marca(tablero[i-1][j-2])
+                            if((i-1)>=0 && (j+2)<=7 && tablero[i-1][j+2].vacio()) marca(tablero[i-1][j+2])
+                            if((i+1)<=7 && (j-2)>=0 && tablero[i+1][j-2].vacio()) marca(tablero[i+1][j-2])
+                            if((i+1)<=7 && (j+2)<=7 && tablero[i+1][j+2].vacio()) marca(tablero[i+1][j+2])
+                            if((i+2)<=7 && (j-1)>=0 && tablero[i+2][j-1].vacio()) marca(tablero[i+2][j-1])
+                            if((i+2)<=7 && (j+1)>=0 && tablero[i+2][j+1].vacio()) marca(tablero[i+2][j+1])
 
                             asigna(tablero)
 
@@ -155,16 +153,16 @@ class MainActivity : AppCompatActivity() {
                             piezaSeleccionada = tablero[i][j]
 
                             for(m in 1..7){
-                                if(i-m>=0 && j-m>=0 && tablero[i-m][j-m].tag==null) marca(tablero[i-m][j-m]) else break
+                                if(i-m>=0 && j-m>=0 && tablero[i-m][j-m].vacio()) marca(tablero[i-m][j-m]) else break
                             }
                             for(m in 1..7){
-                                if(i+m<=7 && j+m<=7 && tablero[i+m][j+m].tag==null) marca(tablero[i+m][j+m]) else break
+                                if(i+m<=7 && j+m<=7 && tablero[i+m][j+m].vacio()) marca(tablero[i+m][j+m]) else break
                             }
                             for(m in 1..7){
-                                if(i-m>=0 && j+m<=7 && tablero[i-m][j+m].tag==null) marca(tablero[i-m][j+m]) else break
+                                if(i-m>=0 && j+m<=7 && tablero[i-m][j+m].vacio()) marca(tablero[i-m][j+m]) else break
                             }
                             for(m in 1..7){
-                                if(i+m<=7 && j-m>=0 && tablero[i+m][j-m].tag==null) marca(tablero[i+m][j-m]) else break
+                                if(i+m<=7 && j-m>=0 && tablero[i+m][j-m].vacio()) marca(tablero[i+m][j-m]) else break
                             }
                             asigna(tablero)
 
@@ -178,28 +176,28 @@ class MainActivity : AppCompatActivity() {
                             tablero.quitaMarcas()
                             piezaSeleccionada = tablero[i][j]
                             for(m in 1..7){
-                                if((j-m)>=0 && tablero[i][j-m].tag==null) marca(tablero[i][j-m]) else break
+                                if((j-m)>=0 && tablero[i][j-m].vacio()) marca(tablero[i][j-m]) else break
                             }
                             for(m in 1..7){
-                                if((i-m)>=0 && tablero[i-m][j].tag==null) marca(tablero[i-m][j]) else break
+                                if((i-m)>=0 && tablero[i-m][j].vacio()) marca(tablero[i-m][j]) else break
                             }
                             for(m in 1..7){
-                                if((j+m)<=7 && tablero[i][j+m].tag==null) marca(tablero[i][j+m]) else break
+                                if((j+m)<=7 && tablero[i][j+m].vacio()) marca(tablero[i][j+m]) else break
                             }
                             for(m in 1..7){
-                                if((i+m)<=7 && tablero[i+m][j].tag==null) marca(tablero[i+m][j]) else break
+                                if((i+m)<=7 && tablero[i+m][j].vacio()) marca(tablero[i+m][j]) else break
                             }
                             for(m in 1..7){
-                                if(i-m>=0 && j-m>=0 && tablero[i-m][j-m].tag==null) marca(tablero[i-m][j-m]) else break
+                                if(i-m>=0 && j-m>=0 && tablero[i-m][j-m].vacio()) marca(tablero[i-m][j-m]) else break
                             }
                             for(m in 1..7){
-                                if(i+m<=7 && j+m<=7 && tablero[i+m][j+m].tag==null) marca(tablero[i+m][j+m]) else break
+                                if(i+m<=7 && j+m<=7 && tablero[i+m][j+m].vacio()) marca(tablero[i+m][j+m]) else break
                             }
                             for(m in 1..7){
-                                if(i-m>=0 && j+m<=7 && tablero[i-m][j+m].tag==null) marca(tablero[i-m][j+m]) else break
+                                if(i-m>=0 && j+m<=7 && tablero[i-m][j+m].vacio()) marca(tablero[i-m][j+m]) else break
                             }
                             for(m in 1..7){
-                                if(i+m<=7 && j-m>=0 && tablero[i+m][j-m].tag==null) marca(tablero[i+m][j-m]) else break
+                                if(i+m<=7 && j-m>=0 && tablero[i+m][j-m].vacio()) marca(tablero[i+m][j-m]) else break
                             }
 
                             asigna(tablero)
@@ -214,25 +212,30 @@ class MainActivity : AppCompatActivity() {
                             tablero.quitaMarcas()
                             piezaSeleccionada = tablero[i][j]
                             //Rectas
-                            if(i-1>=0 && tablero[i-1][j].tag==null) marca(tablero[i-1][j])
-                            if(i+1<=7 && tablero[i+1][j].tag==null) marca(tablero[i+1][j])
-                            if(j-1>=0 && tablero[i][j-1].tag==null) marca(tablero[i][j-1])
-                            if(j+1<=7 && tablero[i][j+1].tag==null) marca(tablero[i][j+1])
+                            if(i-1>=0 && tablero[i-1][j].vacio()) marca(tablero[i-1][j])
+                            if(i+1<=7 && tablero[i+1][j].vacio()) marca(tablero[i+1][j])
+                            if(j-1>=0 && tablero[i][j-1].vacio()) marca(tablero[i][j-1])
+                            if(j+1<=7 && tablero[i][j+1].vacio()) marca(tablero[i][j+1])
                             //Diagonales
-                            if(i-1>=0 && j-1>=0 && tablero[i-1][j-1].tag==null) marca(tablero[i-1][j-1])
-                            if(i+1<=7 && j+1<=7 && tablero[i+1][j+1].tag==null) marca(tablero[i+1][j+1])
-                            if(i-1>=0 && j+1<=7 && tablero[i-1][j+1].tag==null) marca(tablero[i-1][j+1])
-                            if(i+1<=7 && j-1>=0 && tablero[i+1][j-1].tag==null) marca(tablero[i+1][j-1])
+                            if(i-1>=0 && j-1>=0 && tablero[i-1][j-1].vacio()) marca(tablero[i-1][j-1])
+                            if(i+1<=7 && j+1<=7 && tablero[i+1][j+1].vacio()) marca(tablero[i+1][j+1])
+                            if(i-1>=0 && j+1<=7 && tablero[i-1][j+1].vacio()) marca(tablero[i-1][j+1])
+                            if(i+1<=7 && j-1>=0 && tablero[i+1][j-1].vacio()) marca(tablero[i+1][j-1])
 
 
                             asigna(tablero)
                         }
 
                     }
+                    //CASILLA VACIA
+                    else tablero[i][j].setOnClickListener {  }
+
+
+
 
 
                     //CASILLA MARCADA
-                    else if(tablero[i][j].estaMarcada()){
+                    if(tablero[i][j].estaMarcada()){
                         tablero[i][j].setOnClickListener {
                             tablero[i][j].coloca(piezaSeleccionada?.tag as Int)
                             piezaSeleccionada?.tag = null
@@ -242,8 +245,8 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
 
-                    //CASILLA VACIA
-                    else tablero[i][j].setOnClickListener {  }
+
+
 
 
 
@@ -331,8 +334,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun ImageView.vacio(): Boolean{
-        if(this.tag == null) return true
-        else return false
+        return this.tag == null
     }
 
     fun Array<Array<ImageView>>.quitaMarcas(){
