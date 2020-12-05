@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    tools:context=".MainActivity">
+
+
+    <!--FILA 1-->
+    <ImageView
+        android:id="@+id/a8"
+        android:background="@color/blanco"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/gl_1"
+        style="@style/fila1"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/b8"
+        android:background="@color/negro"
+        app:layout_constraintStart_toStartOf="@id/gl_1"
+        app:layout_constraintEnd_toEndOf="@id/gl_2"
+        style="@style/fila1"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/c8"
+        android:background="@color/blanco"
+        app:layout_constraintStart_toStartOf="@id/gl_2"
+        app:layout_constraintEnd_toEndOf="@id/gl_3"
+        style="@style/fila1"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/d8"
+        android:background="@color/negro"
+        app:layout_constraintStart_toStartOf="@id/gl_3"
+        app:layout_constraintEnd_toEndOf="@id/gl_4"
+        style="@style/fila1"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/e8"
+        android:background="@color/blanco"
+        app:layout_constraintStart_toStartOf="@id/gl_4"
+        app:layout_constraintEnd_toEndOf="@id/gl_5"
+        style="@style/fila1"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/f8"
+        android:background="@color/negro"
+        app:layout_constraintStart_toStartOf="@id/gl_5"
+        app:layout_constraintEnd_toEndOf="@id/gl_6"
+        style="@style/fila1"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/g8"
+        android:background="@color/blanco"
+        app:layout_constraintStart_toStartOf="@id/gl_6"
+        app:layout_constraintEnd_toEndOf="@id/gl_7"
+        style="@style/fila1"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/h8"
+        android:background="@color/negro"
+        app:layout_constraintStart_toStartOf="@id/gl_7"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/fila1"
+        tools:ignore="MissingConstraints" />
+
+    <!--FILA 2-->
+    <ImageView
+        android:id="@+id/a7"
+        android:background="@color/negro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/gl_1"
+        style="@style/fila2"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/b7"
+        android:background="@color/blanco"
+        app:layout_constraintStart_toStartOf="@id/gl_1"
+        app:layout_constraintEnd_toEndOf="@id/gl_2"
+        style="@style/fila2"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/c7"
+        android:background="@color/negro"
+        app:layout_constraintStart_toStartOf="@id/gl_2"
+        app:layout_constraintEnd_toEndOf="@id/gl_3"
+        style="@style/fila2"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/d7"
+        android:background="@color/blanco"
+        app:layout_constraintStart_toStartOf="@id/gl_3"
+        app:layout_constraintEnd_toEndOf="@id/gl_4"
+        style="@style/fila2"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/e7"
+        android:background="@color/negro"
+        app:layout_constraintStart_toStartOf="@id/gl_4"
+        app:layout_constraintEnd_toEndOf="@id/gl_5"
+        style="@style/fila2"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/f7"
+        android:background="@color/blanco"
+        app:layout_constraintStart_toStartOf="@id/gl_5"
+        app:layout_constraintEnd_toEndOf="@id/gl_6"
+        style="@style/fila2"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/g7"
+        android:background="@color/negro"
+        app:layout_constraintStart_toStartOf="@id/gl_6"
+        app:layout_constraintEnd_toEndOf="@id/gl_7"
+        style="@style/fila2"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/h7"
+        android:background="@color/blanco"
+        app:layout_constraintStart_toStartOf="@id/gl_7"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/fila2"
+        tools:ignore="MissingConstraints" />
+
+    <!--FILA 3-->
+    <ImageView
+        android:id="@+id/a6"
+        android:background="@color/blanco"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/gl_1"
+        style="@style/fila3"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/b6"
+        android:background="@color/negro"
+        app:layout_constraintStart_toStartOf="@id/gl_1"
+        app:layout_constraintEnd_toEndOf="@id/gl_2"
+        style="@style/fila3"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/c6"
+        android:background="@color/blanco"
+        app:layout_constraintStart_toStartOf="@id/gl_2"
+        app:layout_constraintEnd_toEndOf="@id/gl_3"
+        style="@style/fila3"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/d6"
+        android:background="@color/negro"
+        app:layout_constraintStart_toStartOf="@id/gl_3"
+        app:layout_constraintEnd_toEndOf="@id/gl_4"
+        style="@style/fila3"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/e6"
+        android:background="@color/blanco"
+        app:layout_constraintStart_toStartOf="@id/gl_4"
+        app:layout_constraintEnd_toEndOf="@id/gl_5"
+        style="@style/fila3"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/f6"
+        android:background="@color/negro"
+        app:layout_constraintStart_toStartOf="@id/gl_5"
+        app:layout_constraintEnd_toEndOf="@id/gl_6"
+        style="@style/fila3"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/g6"
+        android:background="@color/blanco"
+        app:layout_constraintStart_toStartOf="@id/gl_6"
+        app:layout_constraintEnd_toEndOf="@id/gl_7"
+        style="@style/fila3"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/h6"
+        android:background="@color/negro"
+        app:layout_constraintStart_toStartOf="@id/gl_7"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/fila3"
+        tools:ignore="MissingConstraints" />
+
+    <!--FILA 4-->
+    <ImageView
+        android:id="@+id/a5"
+        android:background="@color/negro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/gl_1"
+        style="@style/fila4"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/b5"
+        android:background="@color/blanco"
+        app:layout_constraintStart_toStartOf="@id/gl_1"
+        app:layout_constraintEnd_toEndOf="@id/gl_2"
+        style="@style/fila4"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/c5"
+        android:background="@color/negro"
+        app:layout_constraintStart_toStartOf="@id/gl_2"
+        app:layout_constraintEnd_toEndOf="@id/gl_3"
+        style="@style/fila4"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/d5"
+        android:background="@color/blanco"
+        app:layout_constraintStart_toStartOf="@id/gl_3"
+        app:layout_constraintEnd_toEndOf="@id/gl_4"
+        style="@style/fila4"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/e5"
+        android:background="@color/negro"
+        app:layout_constraintStart_toStartOf="@id/gl_4"
+        app:layout_constraintEnd_toEndOf="@id/gl_5"
+        style="@style/fila4"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/f5"
+        android:background="@color/blanco"
+        app:layout_constraintStart_toStartOf="@id/gl_5"
+        app:layout_constraintEnd_toEndOf="@id/gl_6"
+        style="@style/fila4"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/g5"
+        android:background="@color/negro"
+        app:layout_constraintStart_toStartOf="@id/gl_6"
+        app:layout_constraintEnd_toEndOf="@id/gl_7"
+        style="@style/fila4"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/h5"
+        android:background="@color/blanco"
+        app:layout_constraintStart_toStartOf="@id/gl_7"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/fila4"
+        tools:ignore="MissingConstraints" />
+
+    <!--FILA 5-->
+    <ImageView
+        android:id="@+id/a4"
+        android:background="@color/blanco"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/gl_1"
+        style="@style/fila5"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/b4"
+        android:background="@color/negro"
+        app:layout_constraintStart_toStartOf="@id/gl_1"
+        app:layout_constraintEnd_toEndOf="@id/gl_2"
+        style="@style/fila5"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/c4"
+        android:background="@color/blanco"
+        app:layout_constraintStart_toStartOf="@id/gl_2"
+        app:layout_constraintEnd_toEndOf="@id/gl_3"
+        style="@style/fila5"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/d4"
+        android:background="@color/negro"
+        app:layout_constraintStart_toStartOf="@id/gl_3"
+        app:layout_constraintEnd_toEndOf="@id/gl_4"
+        style="@style/fila5"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/e4"
+        android:background="@color/blanco"
+        app:layout_constraintStart_toStartOf="@id/gl_4"
+        app:layout_constraintEnd_toEndOf="@id/gl_5"
+        style="@style/fila5"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/f4"
+        android:background="@color/negro"
+        app:layout_constraintStart_toStartOf="@id/gl_5"
+        app:layout_constraintEnd_toEndOf="@id/gl_6"
+        style="@style/fila5"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/g4"
+        android:background="@color/blanco"
+        app:layout_constraintStart_toStartOf="@id/gl_6"
+        app:layout_constraintEnd_toEndOf="@id/gl_7"
+        style="@style/fila5"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/h4"
+        android:background="@color/negro"
+        app:layout_constraintStart_toStartOf="@id/gl_7"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/fila5"
+        tools:ignore="MissingConstraints" />
+
+    <!--FILA 6-->
+    <ImageView
+        android:id="@+id/a3"
+        android:background="@color/negro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/gl_1"
+        style="@style/fila6"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/b3"
+        android:background="@color/blanco"
+        app:layout_constraintStart_toStartOf="@id/gl_1"
+        app:layout_constraintEnd_toEndOf="@id/gl_2"
+        style="@style/fila6"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/c3"
+        android:background="@color/negro"
+        app:layout_constraintStart_toStartOf="@id/gl_2"
+        app:layout_constraintEnd_toEndOf="@id/gl_3"
+        style="@style/fila6"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/d3"
+        android:background="@color/blanco"
+        app:layout_constraintStart_toStartOf="@id/gl_3"
+        app:layout_constraintEnd_toEndOf="@id/gl_4"
+        style="@style/fila6"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/e3"
+        android:background="@color/negro"
+        app:layout_constraintStart_toStartOf="@id/gl_4"
+        app:layout_constraintEnd_toEndOf="@id/gl_5"
+        style="@style/fila6"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/f3"
+        android:background="@color/blanco"
+        app:layout_constraintStart_toStartOf="@id/gl_5"
+        app:layout_constraintEnd_toEndOf="@id/gl_6"
+        style="@style/fila6"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/g3"
+        android:background="@color/negro"
+        app:layout_constraintStart_toStartOf="@id/gl_6"
+        app:layout_constraintEnd_toEndOf="@id/gl_7"
+        style="@style/fila6"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/h3"
+        android:background="@color/blanco"
+        app:layout_constraintStart_toStartOf="@id/gl_7"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/fila6"
+        tools:ignore="MissingConstraints" />
+
+    <!--FILA 7-->
+    <ImageView
+        android:id="@+id/a2"
+        android:background="@color/blanco"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/gl_1"
+        style="@style/fila7"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/b2"
+        android:background="@color/negro"
+        app:layout_constraintStart_toStartOf="@id/gl_1"
+        app:layout_constraintEnd_toEndOf="@id/gl_2"
+        style="@style/fila7"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/c2"
+        android:background="@color/blanco"
+        app:layout_constraintStart_toStartOf="@id/gl_2"
+        app:layout_constraintEnd_toEndOf="@id/gl_3"
+        style="@style/fila7"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/d2"
+        android:background="@color/negro"
+        app:layout_constraintStart_toStartOf="@id/gl_3"
+        app:layout_constraintEnd_toEndOf="@id/gl_4"
+        style="@style/fila7"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/e2"
+        android:background="@color/blanco"
+        app:layout_constraintStart_toStartOf="@id/gl_4"
+        app:layout_constraintEnd_toEndOf="@id/gl_5"
+        style="@style/fila7"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/f2"
+        android:background="@color/negro"
+        app:layout_constraintStart_toStartOf="@id/gl_5"
+        app:layout_constraintEnd_toEndOf="@id/gl_6"
+        style="@style/fila7"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/g2"
+        android:background="@color/blanco"
+        app:layout_constraintStart_toStartOf="@id/gl_6"
+        app:layout_constraintEnd_toEndOf="@id/gl_7"
+        style="@style/fila7"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/h2"
+        android:background="@color/negro"
+        app:layout_constraintStart_toStartOf="@id/gl_7"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/fila7"
+        tools:ignore="MissingConstraints" />
+
+    <!--FILA 8-->
+    <ImageView
+        android:id="@+id/a1"
+        android:background="@color/negro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/gl_1"
+        style="@style/fila8"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/b1"
+        android:background="@color/blanco"
+        app:layout_constraintStart_toStartOf="@id/gl_1"
+        app:layout_constraintEnd_toEndOf="@id/gl_2"
+        style="@style/fila8"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/c1"
+        android:background="@color/negro"
+        app:layout_constraintStart_toStartOf="@id/gl_2"
+        app:layout_constraintEnd_toEndOf="@id/gl_3"
+        style="@style/fila8"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/d1"
+        android:background="@color/blanco"
+        app:layout_constraintStart_toStartOf="@id/gl_3"
+        app:layout_constraintEnd_toEndOf="@id/gl_4"
+        style="@style/fila8"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/e1"
+        android:background="@color/negro"
+        app:layout_constraintStart_toStartOf="@id/gl_4"
+        app:layout_constraintEnd_toEndOf="@id/gl_5"
+        style="@style/fila8"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/f1"
+        android:background="@color/blanco"
+        app:layout_constraintStart_toStartOf="@id/gl_5"
+        app:layout_constraintEnd_toEndOf="@id/gl_6"
+        style="@style/fila8"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/g1"
+        android:background="@color/negro"
+        app:layout_constraintStart_toStartOf="@id/gl_6"
+        app:layout_constraintEnd_toEndOf="@id/gl_7"
+        style="@style/fila8"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/h1"
+        android:background="@color/blanco"
+        app:layout_constraintStart_toStartOf="@id/gl_7"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/fila8"
+        tools:ignore="MissingConstraints" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--GUIDELINES VERTICALES-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_1"
+        style="@style/gl_vertical"
+        app:layout_constraintGuide_percent="0.125" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_2"
+        style="@style/gl_vertical"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_3"
+        style="@style/gl_vertical"
+        app:layout_constraintGuide_percent="0.375" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_4"
+        style="@style/gl_vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_5"
+        style="@style/gl_vertical"
+        app:layout_constraintGuide_percent="0.625" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_6"
+        style="@style/gl_vertical"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_7"
+        style="@style/gl_vertical"
+        app:layout_constraintGuide_percent="0.875" />
+
+
+    <!--GUIDELINES HORIZONTALES-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_a"
+        style="@style/gl_horizontal"
+        app:layout_constraintGuide_percent="0.1666" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_b"
+        style="@style/gl_horizontal"
+        app:layout_constraintGuide_percent="0.2499" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_c"
+        style="@style/gl_horizontal"
+        app:layout_constraintGuide_percent="0.3332" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_d"
+        style="@style/gl_horizontal"
+        app:layout_constraintGuide_percent="0.4165" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_e"
+        style="@style/gl_horizontal"
+        app:layout_constraintGuide_percent="0.4998" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_f"
+        style="@style/gl_horizontal"
+        app:layout_constraintGuide_percent="0.5831" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_g"
+        style="@style/gl_horizontal"
+        app:layout_constraintGuide_percent="0.6664" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_h"
+        style="@style/gl_horizontal"
+        app:layout_constraintGuide_percent="0.7497" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_i"
+        style="@style/gl_horizontal"
+        app:layout_constraintGuide_percent="0.833" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

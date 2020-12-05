@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="gl_vertical">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="gl_horizontal">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+
+
+    <style name="fila1">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="layout_constraintTop_toTopOf">@id/gl_a</item>
+        <item name="layout_constraintBottom_toBottomOf">@id/gl_b</item>
+    </style>
+    <style name="fila2">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="layout_constraintTop_toTopOf">@id/gl_b</item>
+        <item name="layout_constraintBottom_toBottomOf">@id/gl_c</item>
+    </style>
+    <style name="fila3">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="layout_constraintTop_toTopOf">@id/gl_c</item>
+        <item name="layout_constraintBottom_toBottomOf">@id/gl_d</item>
+    </style>
+    <style name="fila4">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="layout_constraintTop_toTopOf">@id/gl_d</item>
+        <item name="layout_constraintBottom_toBottomOf">@id/gl_e</item>
+    </style>
+    <style name="fila5">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="layout_constraintTop_toTopOf">@id/gl_e</item>
+        <item name="layout_constraintBottom_toBottomOf">@id/gl_f</item>
+    </style>
+    <style name="fila6">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="layout_constraintTop_toTopOf">@id/gl_f</item>
+        <item name="layout_constraintBottom_toBottomOf">@id/gl_g</item>
+    </style>
+    <style name="fila7">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="layout_constraintTop_toTopOf">@id/gl_g</item>
+        <item name="layout_constraintBottom_toBottomOf">@id/gl_h</item>
+    </style>
+    <style name="fila8">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="layout_constraintTop_toTopOf">@id/gl_h</item>
+        <item name="layout_constraintBottom_toBottomOf">@id/gl_i</item>
+    </style>
+</resources>
