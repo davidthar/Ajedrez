@@ -44,8 +44,11 @@ class MainActivity : AppCompatActivity() {
                 arrayOf(binding.a1,binding.b1,binding.c1,binding.d1,binding.e1,binding.f1,binding.g1,binding.h1)
         )
 
-        tablero.colocaPiezas()
-
+        //tablero.colocaPiezas()
+        tablero[4][4].coloca(torreN)
+        tablero[4][6].coloca(peonB)
+        tablero[2][4].coloca(peonB)
+        tablero[6][4].coloca(peonN)
 
         fun asigna(tablero : Array<Array<ImageView>>){
             for(i in 0..7){
@@ -85,18 +88,42 @@ class MainActivity : AppCompatActivity() {
                     else if(tablero[i][j].tag == torreB || tablero[i][j].tag == torreN){
                         tablero[i][j].setOnClickListener{
                             tablero.quitaMarcas()
-                            piezaSeleccionada = tablero[i][j]
+                            piezaSeleccionada = tablero[i][j] as ImageView
                             for(m in 1..7){
-                                if((j-m)>=0 && tablero[i][j-m].tag==null) marca(tablero[i][j-m]) else break
+                                if((j-m)>=0 && tablero[i][j-m].tag==null) marca(tablero[i][j-m])
+                                else{
+                                    if((j-m)>=0 && tablero[i][j-m].color() != piezaSeleccionada!!.color()){
+                                        marca(tablero[i][j-m])
+                                    } else break
+                                    break
+                                }
                             }
                             for(m in 1..7){
-                                if((i-m)>=0 && tablero[i-m][j].tag==null) marca(tablero[i-m][j]) else break
+                                if((i-m)>=0 && tablero[i-m][j].tag==null) marca(tablero[i-m][j])
+                                else{
+                                    if((i-m)>=0 && tablero[i-m][j].color() != piezaSeleccionada!!.color()){
+                                        marca(tablero[i-m][j])
+                                    } else break
+                                    break
+                                }
                             }
                             for(m in 1..7){
-                                if((j+m)<=7 && tablero[i][j+m].tag==null) marca(tablero[i][j+m]) else break
+                                if((j+m)<=7 && tablero[i][j+m].tag==null) marca(tablero[i][j+m])
+                                else{
+                                    if((j+m)<=7 && tablero[i][j+m].color() != piezaSeleccionada!!.color()){
+                                        marca(tablero[i][j+m])
+                                    } else break
+                                    break
+                                }
                             }
                             for(m in 1..7){
-                                if((i+m)<=7 && tablero[i+m][j].tag==null) marca(tablero[i+m][j]) else break
+                                if((i+m)<=7 && tablero[i+m][j].tag==null) marca(tablero[i+m][j])
+                                else{
+                                    if((i+m)<=7 && tablero[i+m][j].color() != piezaSeleccionada!!.color()){
+                                        marca(tablero[i+m][j])
+                                    } else break
+                                    break
+                                }
                             }
 
                             asigna(tablero)
@@ -220,7 +247,7 @@ class MainActivity : AppCompatActivity() {
                     else tablero[i][j].setOnClickListener {  }
 
 
-                     
+
                 }
             }
         }
