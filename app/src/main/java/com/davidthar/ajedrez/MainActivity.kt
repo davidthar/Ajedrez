@@ -45,10 +45,9 @@ class MainActivity : AppCompatActivity() {
         )
 
         //tablero.colocaPiezas()
-        tablero[4][4].coloca(torreN)
-        tablero[4][6].coloca(peonB)
-        tablero[2][4].coloca(peonB)
-        tablero[6][4].coloca(peonN)
+        tablero[2][4].coloca(peonN)
+        tablero[3][4].coloca(peonB)
+        tablero[3][5].coloca(peonB)
 
         fun asigna(tablero : Array<Array<ImageView>>){
             for(i in 0..7){
@@ -63,8 +62,8 @@ class MainActivity : AppCompatActivity() {
                             piezaSeleccionada = tablero[i][j]
 
                             for(m in 1..1){
-                                if(i+m<=7 && tablero[i+m][j].tag==null) marca(tablero[i+m][j]) else break
-                                if(i+2<=7 && i==1 && tablero[i+2][j].tag==null) marca(tablero[i+2][j])
+                                if(i+m<=7 && tablero[i+m][j].vacio()) marca(tablero[i+m][j]) else break
+                                if(i+2<=7 && i==1 && tablero[i+2][j].vacio()) marca(tablero[i+2][j])
                             }
                             asigna(tablero)
                         }
@@ -76,8 +75,8 @@ class MainActivity : AppCompatActivity() {
                             tablero.quitaMarcas()
                             piezaSeleccionada = tablero[i][j]
                             for(m in 1..1){
-                                if(i-m>=0 && tablero[i-m][j].tag==null) marca(tablero[i-m][j]) else break
-                                if(i-2>=0 && i==6 && tablero[i-2][j].tag==null) marca(tablero[i-2][j])
+                                if(i-m>=0 && tablero[i-m][j].vacio()) marca(tablero[i-m][j]) else break
+                                if(i-2>=0 && i==6 && tablero[i-2][j].vacio()) marca(tablero[i-2][j])
                             }
                             asigna(tablero)
                         }
@@ -329,6 +328,11 @@ class MainActivity : AppCompatActivity() {
     fun ImageView.coloca(pieza: Int){
         this.setImageResource(pieza)
         this.tag = pieza
+    }
+
+    fun ImageView.vacio(): Boolean{
+        if(this.tag == null) return true
+        else return false
     }
 
     fun Array<Array<ImageView>>.quitaMarcas(){
