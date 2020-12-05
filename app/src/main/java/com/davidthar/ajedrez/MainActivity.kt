@@ -52,6 +52,7 @@ class MainActivity : AppCompatActivity() {
                 for(j in 0..7){
 
 
+
                     //PEON NEGRO
                     if(tablero[i][j].tag == peonN){
                         tablero[i][j].setOnClickListener {
@@ -217,9 +218,14 @@ class MainActivity : AppCompatActivity() {
 
                     //CASILLA VACIA
                     else tablero[i][j].setOnClickListener {  }
+
+
+                     
                 }
             }
         }
+
+
         asigna(tablero)
     }
 
@@ -277,6 +283,20 @@ class MainActivity : AppCompatActivity() {
         }
 
         return false
+    }
+
+    fun ImageView.color() : Int{
+        var piezasBlancas = arrayOf(peonB,torreB,caballoB,alfilB,reyB,reinaB)
+        var piezasNegras = arrayOf(peonN,torreN,caballoN,alfilN,reyN,reinaN)
+
+        for(i in piezasBlancas){
+            if(this.tag == i) return 1
+        }
+        for(i in piezasNegras){
+            if(this.tag == i) return 2
+        }
+
+        return 0
     }
 
     fun ImageView.coloca(pieza: Int){
