@@ -60,6 +60,16 @@ class MainActivity : AppCompatActivity() {
                             piezaSeleccionada = tablero[i][j]
 
                             for(m in 1..1){
+                                //Marca diagonales si hay pieza que se puede matar
+                                if(i+m<=7
+                                        && tablero[i+m][j-1].color()!=piezaSeleccionada!!.color()
+                                        && !tablero[i+m][j-1].vacio()) marca(tablero[i+m][j-1])
+
+                                if(i+m<=7
+                                        && tablero[i+m][j+1].color()!=piezaSeleccionada!!.color()
+                                        && !tablero[i+m][j+1].vacio()) marca(tablero[i+m][j+1])
+
+                                //Marca la siguiente, y 2 si esta en el inicio
                                 if(i+m<=7 && tablero[i+m][j].vacio()) marca(tablero[i+m][j]) else break
                                 if(i+2<=7 && i==1 && tablero[i+2][j].vacio()) marca(tablero[i+2][j])
                             }
@@ -72,7 +82,18 @@ class MainActivity : AppCompatActivity() {
                         tablero[i][j].setOnClickListener {
                             tablero.quitaMarcas()
                             piezaSeleccionada = tablero[i][j]
+
                             for(m in 1..1){
+                                //Marca diagonales si hay pieza que se puede matar
+                                if(i-m>=0
+                                        && tablero[i-m][j-1].color()!=piezaSeleccionada!!.color()
+                                        && !tablero[i-m][j-1].vacio()) marca(tablero[i-m][j-1])
+
+                                if(i-m>=0
+                                        && tablero[i-m][j+1].color()!=piezaSeleccionada!!.color()
+                                        && !tablero[i-m][j+1].vacio()) marca(tablero[i-m][j+1])
+
+                                //Marca la siguiente, y 2 si esta en el inicio
                                 if(i-m>=0 && tablero[i-m][j].vacio()) marca(tablero[i-m][j]) else break
                                 if(i-2>=0 && i==6 && tablero[i-2][j].vacio()) marca(tablero[i-2][j])
                             }
