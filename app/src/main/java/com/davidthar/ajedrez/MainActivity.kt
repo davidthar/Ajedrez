@@ -22,7 +22,6 @@ import com.davidthar.ajedrez.databinding.ActivityMainBinding
 //TODO COMO HACER JAQUE
 //TODO COMO HACER JAQUE MATE
 //TODO QUITAR ERROR CABALLO
-//TODO ARREGLAR DIAGONALES BORDES PEONES
 
 
 class MainActivity : AppCompatActivity() {
@@ -161,7 +160,7 @@ class MainActivity : AppCompatActivity() {
                             if((i+1)<=7 && (j-2)>=0 && tablero[i+1][j-2].vacio()) marca(tablero[i+1][j-2])
                             if((i+1)<=7 && (j+2)<=7 && tablero[i+1][j+2].vacio()) marca(tablero[i+1][j+2])
                             if((i+2)<=7 && (j-1)>=0 && tablero[i+2][j-1].vacio()) marca(tablero[i+2][j-1])
-                            if((i+2)<=7 && (j+1)>=0 && tablero[i+2][j+1].vacio()) marca(tablero[i+2][j+1])
+                            if((i+2)<=7 && (j+1)<=7 && tablero[i+2][j+1].vacio()) marca(tablero[i+2][j+1])
 
                             asigna(tablero)
 
