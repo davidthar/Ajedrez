@@ -153,14 +153,22 @@ class MainActivity : AppCompatActivity() {
                         tablero[i][j].setOnClickListener {
                             tablero.quitaMarcas()
                             piezaSeleccionada = tablero[i][j]
-                            if((i-2)>=0 && (j-1)>=0 && tablero[i-2][j-1].vacio()) marca(tablero[i-2][j-1])
-                            if((i-2)>=0 && (j+1)<=7 && tablero[i-2][j+1].vacio()) marca(tablero[i-2][j+1])
-                            if((i-1)>=0 && (j-2)>=0 && tablero[i-1][j-2].vacio()) marca(tablero[i-1][j-2])
-                            if((i-1)>=0 && (j+2)<=7 && tablero[i-1][j+2].vacio()) marca(tablero[i-1][j+2])
-                            if((i+1)<=7 && (j-2)>=0 && tablero[i+1][j-2].vacio()) marca(tablero[i+1][j-2])
-                            if((i+1)<=7 && (j+2)<=7 && tablero[i+1][j+2].vacio()) marca(tablero[i+1][j+2])
-                            if((i+2)<=7 && (j-1)>=0 && tablero[i+2][j-1].vacio()) marca(tablero[i+2][j-1])
-                            if((i+2)<=7 && (j+1)<=7 && tablero[i+2][j+1].vacio()) marca(tablero[i+2][j+1])
+                            if((i-2)>=0 && (j-1)>=0 &&
+                                    (tablero[i-2][j-1].vacio()||tablero[i-2][j-1].color()!=piezaSeleccionada!!.color())) marca(tablero[i-2][j-1])
+                            if((i-2)>=0 && (j+1)<=7 &&
+                                    (tablero[i-2][j+1].vacio()||tablero[i-2][j+1].color()!=piezaSeleccionada!!.color())) marca(tablero[i-2][j+1])
+                            if((i-1)>=0 && (j-2)>=0 &&
+                                    (tablero[i-1][j-2].vacio()||tablero[i-1][j-2].color()!=piezaSeleccionada!!.color())) marca(tablero[i-1][j-2])
+                            if((i-1)>=0 && (j+2)<=7 &&
+                                    (tablero[i-1][j+2].vacio()||tablero[i-1][j+2].color()!=piezaSeleccionada!!.color())) marca(tablero[i-1][j+2])
+                            if((i+1)<=7 && (j-2)>=0 &&
+                                    (tablero[i+1][j-2].vacio()||tablero[i+1][j-2].color()!=piezaSeleccionada!!.color())) marca(tablero[i+1][j-2])
+                            if((i+1)<=7 && (j+2)<=7 &&
+                                    (tablero[i+1][j+2].vacio()||tablero[i+1][j+2].color()!=piezaSeleccionada!!.color())) marca(tablero[i+1][j+2])
+                            if((i+2)<=7 && (j-1)>=0 &&
+                                    (tablero[i+2][j-1].vacio()||tablero[i+2][j-1].color()!=piezaSeleccionada!!.color())) marca(tablero[i+2][j-1])
+                            if((i+2)<=7 && (j+1)<=7 &&
+                                    (tablero[i+2][j+1].vacio()||tablero[i+2][j+1].color()!=piezaSeleccionada!!.color())) marca(tablero[i+2][j+1])
 
                             asigna(tablero)
 
@@ -273,7 +281,9 @@ class MainActivity : AppCompatActivity() {
 
                     }
                     //CASILLA VACIA
-                    else tablero[i][j].setOnClickListener {  }
+                    else tablero[i][j].setOnClickListener {
+                        tablero.quitaMarcas()
+                    }
 
 
 
