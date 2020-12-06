@@ -22,6 +22,7 @@ import com.davidthar.ajedrez.databinding.ActivityMainBinding
 //TODO COMO HACER JAQUE
 //TODO COMO HACER JAQUE MATE
 //TODO QUITAR ERROR CABALLO
+//TODO ARREGLAR DIAGONALES BORDES PEONES
 
 
 class MainActivity : AppCompatActivity() {
@@ -174,16 +175,40 @@ class MainActivity : AppCompatActivity() {
                             piezaSeleccionada = tablero[i][j]
 
                             for(m in 1..7){
-                                if(i-m>=0 && j-m>=0 && tablero[i-m][j-m].vacio()) marca(tablero[i-m][j-m]) else break
+                                if(i-m>=0 && j-m>=0 && tablero[i-m][j-m].vacio()) marca(tablero[i-m][j-m])
+                                else{
+                                    if(i-m>=0 && j-m>=0 && tablero[i-m][j-m].color() != piezaSeleccionada!!.color()){
+                                        marca(tablero[i-m][j-m])
+                                    } else break
+                                    break
+                                }
                             }
                             for(m in 1..7){
-                                if(i+m<=7 && j+m<=7 && tablero[i+m][j+m].vacio()) marca(tablero[i+m][j+m]) else break
+                                if(i+m<=7 && j+m<=7 && tablero[i+m][j+m].vacio()) marca(tablero[i+m][j+m])
+                                else{
+                                    if(i+m<=7 && j+m<=7 && tablero[i+m][j+m].color() != piezaSeleccionada!!.color()){
+                                        marca(tablero[i+m][j+m])
+                                    } else break
+                                    break
+                                }
                             }
                             for(m in 1..7){
-                                if(i-m>=0 && j+m<=7 && tablero[i-m][j+m].vacio()) marca(tablero[i-m][j+m]) else break
+                                if(i-m>=0 && j+m<=7 && tablero[i-m][j+m].vacio()) marca(tablero[i-m][j+m])
+                                else{
+                                    if(i-m>=0 && j+m<=7 && tablero[i-m][j+m].color() != piezaSeleccionada!!.color()){
+                                        marca(tablero[i-m][j+m])
+                                    } else break
+                                    break
+                                }
                             }
                             for(m in 1..7){
-                                if(i+m<=7 && j-m>=0 && tablero[i+m][j-m].vacio()) marca(tablero[i+m][j-m]) else break
+                                if(i+m<=7 && j-m>=0 && tablero[i+m][j-m].vacio()) marca(tablero[i+m][j-m])
+                                else{
+                                    if(i+m<=7 && j-m>=0 && tablero[i+m][j-m].color() != piezaSeleccionada!!.color()){
+                                        marca(tablero[i+m][j-m])
+                                    } else break
+                                    break
+                                }
                             }
                             asigna(tablero)
 
