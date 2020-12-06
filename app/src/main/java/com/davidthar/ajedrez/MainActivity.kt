@@ -62,11 +62,11 @@ class MainActivity : AppCompatActivity() {
 
                             for(m in 1..1){
                                 //Marca diagonales si hay pieza que se puede matar
-                                if(i+m<=7
+                                if(i+m<=7 && j-1>=0
                                         && tablero[i+m][j-1].color()!=piezaSeleccionada!!.color()
                                         && !tablero[i+m][j-1].vacio()) marca(tablero[i+m][j-1])
 
-                                if(i+m<=7
+                                if(i+m<=7 &&j+1<=7
                                         && tablero[i+m][j+1].color()!=piezaSeleccionada!!.color()
                                         && !tablero[i+m][j+1].vacio()) marca(tablero[i+m][j+1])
 
@@ -86,11 +86,11 @@ class MainActivity : AppCompatActivity() {
 
                             for(m in 1..1){
                                 //Marca diagonales si hay pieza que se puede matar
-                                if(i-m>=0
+                                if(i-m>=0 && j-1>=0
                                         && tablero[i-m][j-1].color()!=piezaSeleccionada!!.color()
                                         && !tablero[i-m][j-1].vacio()) marca(tablero[i-m][j-1])
 
-                                if(i-m>=0
+                                if(i-m>=0 && j+1<=7
                                         && tablero[i-m][j+1].color()!=piezaSeleccionada!!.color()
                                         && !tablero[i-m][j+1].vacio()) marca(tablero[i-m][j+1])
 
