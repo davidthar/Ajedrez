@@ -13,15 +13,11 @@ import androidx.core.content.ContextCompat
 import com.davidthar.ajedrez.databinding.ActivityMainBinding
 
 
-//TODO COMO MARCAR PRIMERA FICHA EN EL RANGO
-//TODO COMO MATAR
-//TODO COMO MOVER 1 VEZ CADA UNO
 //TODO COMO HACER JAQUE
 //TODO COMO HACER JAQUE MATE
-//TODO QUITAR ERROR CABALLO
 
 
-class MainActivity : AppCompatActivity() {
+open class MainActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -68,24 +64,9 @@ class MainActivity : AppCompatActivity() {
 
                             if (piezaSeleccionada!!.color() == turno) {
 
+                                marcaPeonNegro(tablero,i,j, piezaSeleccionada!!)
 
-                                for (m in 1..1) {
-                                    //Marca diagonales si hay pieza que se puede matar
-                                    if (i + m <= 7 && j - 1 >= 0
-                                            && tablero[i + m][j - 1].color() != piezaSeleccionada!!.color()
-                                            && !tablero[i + m][j - 1].vacio()) marca(tablero[i + m][j - 1])
-
-                                    if (i + m <= 7 && j + 1 <= 7
-                                            && tablero[i + m][j + 1].color() != piezaSeleccionada!!.color()
-                                            && !tablero[i + m][j + 1].vacio()) marca(tablero[i + m][j + 1])
-
-                                    //Marca la siguiente, y 2 si esta en el inicio
-                                    if (i + m <= 7 && tablero[i + m][j].vacio()) marca(tablero[i + m][j]) else break
-                                    if (i + 2 <= 7 && i == 1 && tablero[i + 2][j].vacio()) marca(tablero[i + 2][j])
-                                }
                                 asigna(tablero)
-
-
                             }
                         }
                     }
@@ -338,6 +319,23 @@ class MainActivity : AppCompatActivity() {
 
 
         asigna(tablero)
+    }
+
+    fun marcaPeonNegro(tablero: Array<Array<ImageView>>,i: Int,j: Int, piezaSeleccionada: ImageView){
+        for (m in 1..1) {
+            //Marca diagonales si hay pieza que se puede matar
+            if (i + m <= 7 && j - 1 >= 0
+                    && tablero[i + m][j - 1].color() != piezaSeleccionada!!.color()
+                    && !tablero[i + m][j - 1].vacio()) marca(tablero[i + m][j - 1])
+
+            if (i + m <= 7 && j + 1 <= 7
+                    && tablero[i + m][j + 1].color() != piezaSeleccionada!!.color()
+                    && !tablero[i + m][j + 1].vacio()) marca(tablero[i + m][j + 1])
+
+            //Marca la siguiente, y 2 si esta en el inicio
+            if (i + m <= 7 && tablero[i + m][j].vacio()) marca(tablero[i + m][j]) else break
+            if (i + 2 <= 7 && i == 1 && tablero[i + 2][j].vacio()) marca(tablero[i + 2][j])
+        }
     }
 
 
